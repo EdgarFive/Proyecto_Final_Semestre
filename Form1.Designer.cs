@@ -54,9 +54,9 @@
             // 
             // button1_buscar
             // 
-            this.button1_buscar.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button1_buscar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button1_buscar.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1_buscar.Location = new System.Drawing.Point(131, 276);
+            this.button1_buscar.Location = new System.Drawing.Point(132, 322);
             this.button1_buscar.Name = "button1_buscar";
             this.button1_buscar.Size = new System.Drawing.Size(113, 34);
             this.button1_buscar.TabIndex = 0;
@@ -206,20 +206,21 @@
             // 
             // button1_cargar
             // 
-            this.button1_cargar.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button1_cargar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button1_cargar.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1_cargar.Location = new System.Drawing.Point(12, 276);
+            this.button1_cargar.Location = new System.Drawing.Point(13, 322);
             this.button1_cargar.Name = "button1_cargar";
             this.button1_cargar.Size = new System.Drawing.Size(113, 34);
             this.button1_cargar.TabIndex = 15;
             this.button1_cargar.Text = "Cargar";
             this.button1_cargar.UseVisualStyleBackColor = false;
+            this.button1_cargar.Click += new System.EventHandler(this.button1_cargar_Click);
             // 
             // button1_agregar
             // 
-            this.button1_agregar.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button1_agregar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button1_agregar.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1_agregar.Location = new System.Drawing.Point(250, 276);
+            this.button1_agregar.Location = new System.Drawing.Point(251, 322);
             this.button1_agregar.Name = "button1_agregar";
             this.button1_agregar.Size = new System.Drawing.Size(113, 34);
             this.button1_agregar.TabIndex = 16;
@@ -228,9 +229,9 @@
             // 
             // button1_actualizar
             // 
-            this.button1_actualizar.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button1_actualizar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button1_actualizar.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1_actualizar.Location = new System.Drawing.Point(488, 276);
+            this.button1_actualizar.Location = new System.Drawing.Point(489, 322);
             this.button1_actualizar.Name = "button1_actualizar";
             this.button1_actualizar.Size = new System.Drawing.Size(113, 34);
             this.button1_actualizar.TabIndex = 17;
@@ -239,9 +240,9 @@
             // 
             // button1_borrar
             // 
-            this.button1_borrar.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button1_borrar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button1_borrar.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1_borrar.Location = new System.Drawing.Point(369, 276);
+            this.button1_borrar.Location = new System.Drawing.Point(370, 322);
             this.button1_borrar.Name = "button1_borrar";
             this.button1_borrar.Size = new System.Drawing.Size(113, 34);
             this.button1_borrar.TabIndex = 18;
@@ -252,9 +253,9 @@
             // 
             this.dataGridView1_tabla.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridView1_tabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1_tabla.Location = new System.Drawing.Point(12, 316);
+            this.dataGridView1_tabla.Location = new System.Drawing.Point(3, 362);
             this.dataGridView1_tabla.Name = "dataGridView1_tabla";
-            this.dataGridView1_tabla.Size = new System.Drawing.Size(693, 150);
+            this.dataGridView1_tabla.Size = new System.Drawing.Size(721, 104);
             this.dataGridView1_tabla.TabIndex = 19;
             // 
             // Form1
