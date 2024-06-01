@@ -39,7 +39,6 @@
             this.label_categoria = new System.Windows.Forms.Label();
             this.label_Presupuesto = new System.Windows.Forms.Label();
             this.label_clasificacion = new System.Windows.Forms.Label();
-            this.textBox1_fecha_estreno = new System.Windows.Forms.TextBox();
             this.textBox1_duracion = new System.Windows.Forms.TextBox();
             this.textBox1_categoria = new System.Windows.Forms.TextBox();
             this.textBox1_presupuesto = new System.Windows.Forms.TextBox();
@@ -49,6 +48,8 @@
             this.button1_actualizar = new System.Windows.Forms.Button();
             this.button1_borrar = new System.Windows.Forms.Button();
             this.dataGridView1_tabla = new System.Windows.Forms.DataGridView();
+            this.dateTimePicker1_fecha_estreno = new System.Windows.Forms.DateTimePicker();
+            this.comboBox1_categoria = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1_tabla)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,12 +57,13 @@
             // 
             this.button1_buscar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button1_buscar.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1_buscar.Location = new System.Drawing.Point(132, 322);
+            this.button1_buscar.Location = new System.Drawing.Point(131, 282);
             this.button1_buscar.Name = "button1_buscar";
             this.button1_buscar.Size = new System.Drawing.Size(113, 34);
             this.button1_buscar.TabIndex = 0;
-            this.button1_buscar.Text = "Buscar";
+            this.button1_buscar.Text = "Buscar por ID";
             this.button1_buscar.UseVisualStyleBackColor = false;
+            this.button1_buscar.Click += new System.EventHandler(this.button1_buscar_Click);
             // 
             // label_id
             // 
@@ -146,7 +148,7 @@
             this.label_Presupuesto.BackColor = System.Drawing.Color.LightSteelBlue;
             this.label_Presupuesto.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label_Presupuesto.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Presupuesto.Location = new System.Drawing.Point(344, 151);
+            this.label_Presupuesto.Location = new System.Drawing.Point(344, 152);
             this.label_Presupuesto.Name = "label_Presupuesto";
             this.label_Presupuesto.Size = new System.Drawing.Size(88, 22);
             this.label_Presupuesto.TabIndex = 8;
@@ -158,19 +160,11 @@
             this.label_clasificacion.BackColor = System.Drawing.Color.LightSteelBlue;
             this.label_clasificacion.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label_clasificacion.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_clasificacion.Location = new System.Drawing.Point(344, 177);
+            this.label_clasificacion.Location = new System.Drawing.Point(344, 178);
             this.label_clasificacion.Name = "label_clasificacion";
             this.label_clasificacion.Size = new System.Drawing.Size(89, 22);
             this.label_clasificacion.TabIndex = 9;
             this.label_clasificacion.Text = "Clasificación:";
-            // 
-            // textBox1_fecha_estreno
-            // 
-            this.textBox1_fecha_estreno.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBox1_fecha_estreno.Location = new System.Drawing.Point(465, 73);
-            this.textBox1_fecha_estreno.Name = "textBox1_fecha_estreno";
-            this.textBox1_fecha_estreno.Size = new System.Drawing.Size(240, 20);
-            this.textBox1_fecha_estreno.TabIndex = 10;
             // 
             // textBox1_duracion
             // 
@@ -187,11 +181,12 @@
             this.textBox1_categoria.Name = "textBox1_categoria";
             this.textBox1_categoria.Size = new System.Drawing.Size(240, 20);
             this.textBox1_categoria.TabIndex = 12;
+            this.textBox1_categoria.TextChanged += new System.EventHandler(this.textBox1_categoria_TextChanged);
             // 
             // textBox1_presupuesto
             // 
             this.textBox1_presupuesto.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBox1_presupuesto.Location = new System.Drawing.Point(465, 151);
+            this.textBox1_presupuesto.Location = new System.Drawing.Point(465, 152);
             this.textBox1_presupuesto.Name = "textBox1_presupuesto";
             this.textBox1_presupuesto.Size = new System.Drawing.Size(240, 20);
             this.textBox1_presupuesto.TabIndex = 13;
@@ -199,8 +194,9 @@
             // textBox1_clasificacion
             // 
             this.textBox1_clasificacion.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBox1_clasificacion.Location = new System.Drawing.Point(465, 177);
+            this.textBox1_clasificacion.Location = new System.Drawing.Point(465, 178);
             this.textBox1_clasificacion.Name = "textBox1_clasificacion";
+            this.textBox1_clasificacion.ReadOnly = true;
             this.textBox1_clasificacion.Size = new System.Drawing.Size(240, 20);
             this.textBox1_clasificacion.TabIndex = 14;
             // 
@@ -208,7 +204,7 @@
             // 
             this.button1_cargar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button1_cargar.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1_cargar.Location = new System.Drawing.Point(13, 322);
+            this.button1_cargar.Location = new System.Drawing.Point(12, 282);
             this.button1_cargar.Name = "button1_cargar";
             this.button1_cargar.Size = new System.Drawing.Size(113, 34);
             this.button1_cargar.TabIndex = 15;
@@ -220,43 +216,66 @@
             // 
             this.button1_agregar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button1_agregar.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1_agregar.Location = new System.Drawing.Point(251, 322);
+            this.button1_agregar.Location = new System.Drawing.Point(250, 282);
             this.button1_agregar.Name = "button1_agregar";
             this.button1_agregar.Size = new System.Drawing.Size(113, 34);
             this.button1_agregar.TabIndex = 16;
             this.button1_agregar.Text = "Agregar";
             this.button1_agregar.UseVisualStyleBackColor = false;
+            this.button1_agregar.Click += new System.EventHandler(this.button1_agregar_Click);
             // 
             // button1_actualizar
             // 
             this.button1_actualizar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button1_actualizar.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1_actualizar.Location = new System.Drawing.Point(489, 322);
+            this.button1_actualizar.Location = new System.Drawing.Point(488, 282);
             this.button1_actualizar.Name = "button1_actualizar";
             this.button1_actualizar.Size = new System.Drawing.Size(113, 34);
             this.button1_actualizar.TabIndex = 17;
             this.button1_actualizar.Text = "Actualizar";
             this.button1_actualizar.UseVisualStyleBackColor = false;
+            this.button1_actualizar.Click += new System.EventHandler(this.button1_actualizar_Click);
             // 
             // button1_borrar
             // 
             this.button1_borrar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button1_borrar.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1_borrar.Location = new System.Drawing.Point(370, 322);
+            this.button1_borrar.Location = new System.Drawing.Point(369, 282);
             this.button1_borrar.Name = "button1_borrar";
             this.button1_borrar.Size = new System.Drawing.Size(113, 34);
             this.button1_borrar.TabIndex = 18;
             this.button1_borrar.Text = "Borrar";
             this.button1_borrar.UseVisualStyleBackColor = false;
+            this.button1_borrar.Click += new System.EventHandler(this.button1_borrar_Click);
             // 
             // dataGridView1_tabla
             // 
             this.dataGridView1_tabla.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridView1_tabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1_tabla.Location = new System.Drawing.Point(3, 362);
+            this.dataGridView1_tabla.Location = new System.Drawing.Point(3, 322);
             this.dataGridView1_tabla.Name = "dataGridView1_tabla";
-            this.dataGridView1_tabla.Size = new System.Drawing.Size(721, 104);
+            this.dataGridView1_tabla.Size = new System.Drawing.Size(721, 144);
             this.dataGridView1_tabla.TabIndex = 19;
+            // 
+            // dateTimePicker1_fecha_estreno
+            // 
+            this.dateTimePicker1_fecha_estreno.CalendarMonthBackground = System.Drawing.SystemColors.InactiveBorder;
+            this.dateTimePicker1_fecha_estreno.Location = new System.Drawing.Point(465, 72);
+            this.dateTimePicker1_fecha_estreno.Name = "dateTimePicker1_fecha_estreno";
+            this.dateTimePicker1_fecha_estreno.Size = new System.Drawing.Size(240, 20);
+            this.dateTimePicker1_fecha_estreno.TabIndex = 20;
+            // 
+            // comboBox1_categoria
+            // 
+            this.comboBox1_categoria.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.comboBox1_categoria.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1_categoria.FormattingEnabled = true;
+            this.comboBox1_categoria.Location = new System.Drawing.Point(465, 204);
+            this.comboBox1_categoria.Name = "comboBox1_categoria";
+            this.comboBox1_categoria.Size = new System.Drawing.Size(121, 24);
+            this.comboBox1_categoria.TabIndex = 21;
+            this.comboBox1_categoria.Text = "Calificación";
+            this.comboBox1_categoria.SelectedIndexChanged += new System.EventHandler(this.comboBox1_categoria_SelectedIndexChanged);
             // 
             // Form1
             // 
@@ -264,6 +283,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(727, 478);
+            this.Controls.Add(this.comboBox1_categoria);
+            this.Controls.Add(this.dateTimePicker1_fecha_estreno);
             this.Controls.Add(this.dataGridView1_tabla);
             this.Controls.Add(this.button1_borrar);
             this.Controls.Add(this.button1_actualizar);
@@ -273,7 +294,6 @@
             this.Controls.Add(this.textBox1_presupuesto);
             this.Controls.Add(this.textBox1_categoria);
             this.Controls.Add(this.textBox1_duracion);
-            this.Controls.Add(this.textBox1_fecha_estreno);
             this.Controls.Add(this.label_clasificacion);
             this.Controls.Add(this.label_Presupuesto);
             this.Controls.Add(this.label_categoria);
@@ -304,7 +324,6 @@
         private System.Windows.Forms.Label label_categoria;
         private System.Windows.Forms.Label label_Presupuesto;
         private System.Windows.Forms.Label label_clasificacion;
-        private System.Windows.Forms.TextBox textBox1_fecha_estreno;
         private System.Windows.Forms.TextBox textBox1_duracion;
         private System.Windows.Forms.TextBox textBox1_categoria;
         private System.Windows.Forms.TextBox textBox1_presupuesto;
@@ -314,6 +333,8 @@
         private System.Windows.Forms.Button button1_actualizar;
         private System.Windows.Forms.Button button1_borrar;
         private System.Windows.Forms.DataGridView dataGridView1_tabla;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1_fecha_estreno;
+        private System.Windows.Forms.ComboBox comboBox1_categoria;
     }
 }
 
