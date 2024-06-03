@@ -24,9 +24,6 @@ namespace Proyecto_Final_Semestre
         //Crear variable para clase base.
         private PeliculasBD ppelicula;
 
-        //Crear una direccion para mostrar las imagenes.
-        private Dictionary<string, string> peliculaImagenes;
-
         //Lista de calificaciones.
         private string[] calificacionpelis =
         {
@@ -48,6 +45,10 @@ namespace Proyecto_Final_Semestre
             "Fantacía",
             "Romance",
         };
+
+        //Crear una direccion para mostrar las imagenes.
+        private Dictionary<string, string> peliculaImagenes;
+
 
 
 
@@ -280,7 +281,7 @@ namespace Proyecto_Final_Semestre
                     int respuesta = ppelicula.ActualizarPelicula(Id, Nombre, Fecha_estreno, Duracion, Categoria, Presupuesto, Clasificacion);
                     if (respuesta > 0)
                     {
-                        MessageBox.Show("Personaje Actualizado correctamente");
+                        MessageBox.Show("Pelicula Actualizado correctamente");
                         dataGridView1_tabla.DataSource = ppelicula.Leertodo();
                     }
                     else
@@ -309,7 +310,7 @@ namespace Proyecto_Final_Semestre
                 int respuesta = ppelicula.EliminarPelicula(id);
                 if (respuesta > 0)
                 {
-                    MessageBox.Show("Personaje Eliminado correctamente");
+                    MessageBox.Show("Pelicula Eliminada correctamente");
                     dataGridView1_tabla.DataSource = ppelicula.Leertodo();
                     textBox_id.Clear();
                     textBox_nombre.Clear();
@@ -321,7 +322,7 @@ namespace Proyecto_Final_Semestre
                 }
                 else
                 {
-                    MessageBox.Show("Error al Eliminar el personaje");
+                    MessageBox.Show("Error al Eliminar la pelicula");
                 }
             }
             else
