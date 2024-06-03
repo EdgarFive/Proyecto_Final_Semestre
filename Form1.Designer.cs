@@ -50,7 +50,11 @@
             this.dataGridView1_tabla = new System.Windows.Forms.DataGridView();
             this.dateTimePicker1_fecha_estreno = new System.Windows.Forms.DateTimePicker();
             this.comboBox1_categoria = new System.Windows.Forms.ComboBox();
+            this.comboBox1_categoriass = new System.Windows.Forms.ComboBox();
+            this.button1_limpiar_datos = new System.Windows.Forms.Button();
+            this.pictureBox1_portadas_peliculas = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1_tabla)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1_portadas_peliculas)).BeginInit();
             this.SuspendLayout();
             // 
             // button1_buscar
@@ -148,7 +152,7 @@
             this.label_Presupuesto.BackColor = System.Drawing.Color.LightSteelBlue;
             this.label_Presupuesto.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label_Presupuesto.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Presupuesto.Location = new System.Drawing.Point(344, 152);
+            this.label_Presupuesto.Location = new System.Drawing.Point(344, 178);
             this.label_Presupuesto.Name = "label_Presupuesto";
             this.label_Presupuesto.Size = new System.Drawing.Size(88, 22);
             this.label_Presupuesto.TabIndex = 8;
@@ -160,7 +164,7 @@
             this.label_clasificacion.BackColor = System.Drawing.Color.LightSteelBlue;
             this.label_clasificacion.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label_clasificacion.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_clasificacion.Location = new System.Drawing.Point(344, 178);
+            this.label_clasificacion.Location = new System.Drawing.Point(344, 204);
             this.label_clasificacion.Name = "label_clasificacion";
             this.label_clasificacion.Size = new System.Drawing.Size(89, 22);
             this.label_clasificacion.TabIndex = 9;
@@ -179,6 +183,7 @@
             this.textBox1_categoria.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.textBox1_categoria.Location = new System.Drawing.Point(465, 125);
             this.textBox1_categoria.Name = "textBox1_categoria";
+            this.textBox1_categoria.ReadOnly = true;
             this.textBox1_categoria.Size = new System.Drawing.Size(240, 20);
             this.textBox1_categoria.TabIndex = 12;
             this.textBox1_categoria.TextChanged += new System.EventHandler(this.textBox1_categoria_TextChanged);
@@ -186,7 +191,7 @@
             // textBox1_presupuesto
             // 
             this.textBox1_presupuesto.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBox1_presupuesto.Location = new System.Drawing.Point(465, 152);
+            this.textBox1_presupuesto.Location = new System.Drawing.Point(465, 178);
             this.textBox1_presupuesto.Name = "textBox1_presupuesto";
             this.textBox1_presupuesto.Size = new System.Drawing.Size(240, 20);
             this.textBox1_presupuesto.TabIndex = 13;
@@ -194,7 +199,7 @@
             // textBox1_clasificacion
             // 
             this.textBox1_clasificacion.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBox1_clasificacion.Location = new System.Drawing.Point(465, 178);
+            this.textBox1_clasificacion.Location = new System.Drawing.Point(465, 204);
             this.textBox1_clasificacion.Name = "textBox1_clasificacion";
             this.textBox1_clasificacion.ReadOnly = true;
             this.textBox1_clasificacion.Size = new System.Drawing.Size(240, 20);
@@ -270,12 +275,45 @@
             this.comboBox1_categoria.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.comboBox1_categoria.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1_categoria.FormattingEnabled = true;
-            this.comboBox1_categoria.Location = new System.Drawing.Point(465, 204);
+            this.comboBox1_categoria.Location = new System.Drawing.Point(465, 230);
             this.comboBox1_categoria.Name = "comboBox1_categoria";
             this.comboBox1_categoria.Size = new System.Drawing.Size(121, 24);
             this.comboBox1_categoria.TabIndex = 21;
-            this.comboBox1_categoria.Text = "Calificación";
+            this.comboBox1_categoria.Text = "Clasificación";
             this.comboBox1_categoria.SelectedIndexChanged += new System.EventHandler(this.comboBox1_categoria_SelectedIndexChanged);
+            // 
+            // comboBox1_categoriass
+            // 
+            this.comboBox1_categoriass.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.comboBox1_categoriass.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1_categoriass.FormattingEnabled = true;
+            this.comboBox1_categoriass.Location = new System.Drawing.Point(465, 151);
+            this.comboBox1_categoriass.Name = "comboBox1_categoriass";
+            this.comboBox1_categoriass.Size = new System.Drawing.Size(121, 23);
+            this.comboBox1_categoriass.TabIndex = 22;
+            this.comboBox1_categoriass.Text = "Categoría";
+            this.comboBox1_categoriass.SelectedIndexChanged += new System.EventHandler(this.comboBox1_categoriass_SelectedIndexChanged);
+            // 
+            // button1_limpiar_datos
+            // 
+            this.button1_limpiar_datos.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button1_limpiar_datos.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1_limpiar_datos.Location = new System.Drawing.Point(616, 250);
+            this.button1_limpiar_datos.Name = "button1_limpiar_datos";
+            this.button1_limpiar_datos.Size = new System.Drawing.Size(99, 66);
+            this.button1_limpiar_datos.TabIndex = 23;
+            this.button1_limpiar_datos.Text = "Limpiar Datos";
+            this.button1_limpiar_datos.UseVisualStyleBackColor = false;
+            this.button1_limpiar_datos.Click += new System.EventHandler(this.button1_limpiar_datos_Click);
+            // 
+            // pictureBox1_portadas_peliculas
+            // 
+            this.pictureBox1_portadas_peliculas.Location = new System.Drawing.Point(12, 19);
+            this.pictureBox1_portadas_peliculas.Name = "pictureBox1_portadas_peliculas";
+            this.pictureBox1_portadas_peliculas.Size = new System.Drawing.Size(175, 257);
+            this.pictureBox1_portadas_peliculas.TabIndex = 24;
+            this.pictureBox1_portadas_peliculas.TabStop = false;
+            this.pictureBox1_portadas_peliculas.Click += new System.EventHandler(this.pictureBox1_portadas_peliculas_Click);
             // 
             // Form1
             // 
@@ -283,6 +321,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(727, 478);
+            this.Controls.Add(this.pictureBox1_portadas_peliculas);
+            this.Controls.Add(this.button1_limpiar_datos);
+            this.Controls.Add(this.comboBox1_categoriass);
             this.Controls.Add(this.comboBox1_categoria);
             this.Controls.Add(this.dateTimePicker1_fecha_estreno);
             this.Controls.Add(this.dataGridView1_tabla);
@@ -307,6 +348,7 @@
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1_tabla)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1_portadas_peliculas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -335,6 +377,9 @@
         private System.Windows.Forms.DataGridView dataGridView1_tabla;
         private System.Windows.Forms.DateTimePicker dateTimePicker1_fecha_estreno;
         private System.Windows.Forms.ComboBox comboBox1_categoria;
+        private System.Windows.Forms.ComboBox comboBox1_categoriass;
+        private System.Windows.Forms.Button button1_limpiar_datos;
+        private System.Windows.Forms.PictureBox pictureBox1_portadas_peliculas;
     }
 }
 

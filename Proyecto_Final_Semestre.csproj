@@ -101,7 +101,6 @@
     <Compile Include="ConexionMySql.cs" />
     <Compile Include="Data\ConexionMySql.cs" />
     <Compile Include="Data\DataAcces\PeliculasBD.cs" />
-    <Compile Include="Data\Modelos\Pelicula.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,5 +135,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
