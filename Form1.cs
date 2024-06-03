@@ -144,7 +144,7 @@ namespace Proyecto_Final_Semestre
             }
             else
             {
-                MessageBox.Show("Fallo en encontrar la imagen");
+
             }
         }
 
@@ -182,6 +182,9 @@ namespace Proyecto_Final_Semestre
         {
             try
             {
+                string eeclear = "base_imagen";
+                ffmostrarimagen(eeclear);
+
                 int idpeliculabuscar = int.Parse(textBox_id.Text);
 
                 DataTable peliculaencontrada = ppelicula.BuscarPeliculaPorId(idpeliculabuscar);
@@ -204,10 +207,9 @@ namespace Proyecto_Final_Semestre
                     textBox1_clasificacion.Text = clasificacion;
                     dataGridView1_tabla.DataSource = ppelicula.Leertodo();
 
-
                     ffmostrarimagen(nombre);
+                    MessageBox.Show($"Película encontrada. \"{nombre}\"");
 
-                    MessageBox.Show($"Pelicula encontrada. \"{nombre}\"");
                 }
                 else
                 {
